@@ -9,7 +9,6 @@ on:
       - main
 
 env:
-  MY_PREFIX: DEV
   TF_VERSION: 1.6.0
   AWS_REGION: ap-northeast-2
 
@@ -72,7 +71,7 @@ jobs:
 
     - name: Terraform plan
       id: plan
-      run: terraform plan -no-color -var=prefix="$MY_PREFIX"
+      run: terraform plan -no-color
       continue-on-error: true
 
     - name: Plan output
@@ -142,9 +141,9 @@ jobs:
 
     - name: Terraform plan
       id: plan
-      run: terraform plan -no-color -var=prefix="$MY_PREFIX"
+      run: terraform plan -no-color
       continue-on-error: true
 
     - name: Terraform apply
       id: apply
-      run: terraform apply -auto-approve -var=prefix="$MY_PREFIX" -input=false
+      run: terraform apply -auto-approve -input=false
