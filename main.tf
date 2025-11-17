@@ -1,13 +1,13 @@
-terraform {
-  cloud {
-    organization = "DDIM-ORG"
-    hostname = "app.terraform.io"
+# terraform {
+#   cloud {
+#     organization = "DDIM-ORG"
+#     hostname = "app.terraform.io"
 
-    workspaces {
-      name = "terraform-github-action"
-    }
-  }
-}
+#     workspaces {
+#       name = "terraform-github-action"
+#     }
+#   }
+# }
 
 resource "aws_vpc" "main" {
  cidr_block = var.address_space
